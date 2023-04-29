@@ -1,0 +1,84 @@
+Starting the 'Apache2.4' service
+The 'Apache2.4' service is running.
+ly determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:00:37.142138 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Tue Apr 25 19:00:37.143163 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00456: Apache Lounge VS17 Server built: Apr 13 2023 09:42:59
+[Tue Apr 25 19:00:37.143163 2023] [core:notice] [pid 12356:tid 328] AH00094: Command line: 'C:\\PHP\\Apache24\\bin\\httpd.exe -d C:/PHP/Apache24'
+[Tue Apr 25 19:00:37.147125 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00418: Parent: Created child process 14496
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:00:37.398007 2023] [mpm_winnt:notice] [pid 14496:tid 328] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 25 19:01:30.139089 2023] [authz_core:error] [pid 14496:tid 1160] [client ::1:57949] AH01630: client denied by server configuration: C:/PHP/pageDirectory/
+[Tue Apr 25 19:01:30.189475 2023] [authz_core:error] [pid 14496:tid 1160] [client ::1:57949] AH01630: client denied by server configuration: C:/PHP/pageDirectory/favicon.ico, referer: http://localhost/
+[Tue Apr 25 19:02:43.222944 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00424: Parent: Received restart signal -- Restarting the server.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:02:43.243990 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Tue Apr 25 19:02:43.243990 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00456: Apache Lounge VS17 Server built: Apr 13 2023 09:42:59
+[Tue Apr 25 19:02:43.243990 2023] [core:notice] [pid 12356:tid 328] AH00094: Command line: 'C:\\PHP\\Apache24\\bin\\httpd.exe -d C:/PHP/Apache24'
+[Tue Apr 25 19:02:43.248007 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00418: Parent: Created child process 13024
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:02:44.230400 2023] [mpm_winnt:notice] [pid 13024:tid 344] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 25 19:02:45.245608 2023] [mpm_winnt:notice] [pid 14496:tid 328] AH00364: Child: All worker threads have exited.
+[Tue Apr 25 19:11:05.840643 2023] [mpm_winnt:notice] [pid 12356:tid 328] AH00424: Parent: Received restart signal -- Restarting the server.
+httpd.exe: Syntax error on line 540 of C:/PHP/Apache24/conf/httpd.conf: Can't locate API module structure `php7_module' in file C:/PHP/php/php8apache2_4.dll: No error
+[Tue Apr 25 19:11:07.864942 2023] [mpm_winnt:notice] [pid 13024:tid 344] AH00364: Child: All worker threads have exited.
+[Tue Apr 25 19:23:43.753497 2023] [core:warn] [pid 15720:tid 312] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:23:43.760398 2023] [core:warn] [pid 15720:tid 312] AH00098: pid file C:/PHP/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Apr 25 19:23:43.787330 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00455: Apache/2.4.57 (Win64) PHP/8.2.5 configured -- resuming normal operations
+[Tue Apr 25 19:23:43.787330 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00456: Apache Lounge VS17 Server built: Apr 13 2023 09:42:59
+[Tue Apr 25 19:23:43.787330 2023] [core:notice] [pid 15720:tid 312] AH00094: Command line: 'C:\\PHP\\Apache24\\bin\\httpd.exe -d C:/PHP/Apache24'
+[Tue Apr 25 19:23:43.790320 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00418: Parent: Created child process 8556
+[Tue Apr 25 19:23:44.021067 2023] [core:warn] [pid 8556:tid 328] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:23:44.039999 2023] [core:warn] [pid 8556:tid 328] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:23:44.062335 2023] [mpm_winnt:notice] [pid 8556:tid 328] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 25 19:23:47.701403 2023] [authz_core:error] [pid 8556:tid 1316] [client ::1:59758] AH01630: client denied by server configuration: C:/PHP/pageDirectory/
+[Tue Apr 25 19:23:48.810574 2023] [authz_core:error] [pid 8556:tid 1316] [client ::1:59758] AH01630: client denied by server configuration: C:/PHP/pageDirectory/
+[Tue Apr 25 19:24:23.975236 2023] [authz_core:error] [pid 8556:tid 1316] [client ::1:59797] AH01630: client denied by server configuration: C:/PHP/pageDirectory/
+[Tue Apr 25 19:26:46.571064 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00424: Parent: Received restart signal -- Restarting the server.
+[Tue Apr 25 19:26:46.589017 2023] [core:warn] [pid 15720:tid 312] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:26:46.599012 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00455: Apache/2.4.57 (Win64) PHP/8.2.5 configured -- resuming normal operations
+[Tue Apr 25 19:26:46.599012 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00456: Apache Lounge VS17 Server built: Apr 13 2023 09:42:59
+[Tue Apr 25 19:26:46.599012 2023] [core:notice] [pid 15720:tid 312] AH00094: Command line: 'C:\\PHP\\Apache24\\bin\\httpd.exe -d C:/PHP/Apache24'
+[Tue Apr 25 19:26:46.602724 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00418: Parent: Created child process 12948
+[Tue Apr 25 19:26:46.829993 2023] [core:warn] [pid 12948:tid 336] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:26:46.849521 2023] [core:warn] [pid 12948:tid 336] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:26:47.580846 2023] [mpm_winnt:notice] [pid 12948:tid 336] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 25 19:26:48.589827 2023] [mpm_winnt:notice] [pid 8556:tid 328] AH00364: Child: All worker threads have exited.
+[Tue Apr 25 19:26:54.087043 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Apr 25 19:26:56.109537 2023] [mpm_winnt:notice] [pid 12948:tid 336] AH00364: Child: All worker threads have exited.
+[Tue Apr 25 19:26:56.142924 2023] [mpm_winnt:notice] [pid 15720:tid 312] AH00430: Parent: Child process 12948 exited successfully.
+[Tue Apr 25 19:26:59.002715 2023] [core:warn] [pid 9168:tid 312] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:26:59.026687 2023] [mpm_winnt:notice] [pid 9168:tid 312] AH00455: Apache/2.4.57 (Win64) PHP/8.2.5 configured -- resuming normal operations
+[Tue Apr 25 19:26:59.026687 2023] [mpm_winnt:notice] [pid 9168:tid 312] AH00456: Apache Lounge VS17 Server built: Apr 13 2023 09:42:59
+[Tue Apr 25 19:26:59.026687 2023] [core:notice] [pid 9168:tid 312] AH00094: Command line: 'C:\\PHP\\Apache24\\bin\\httpd.exe -d C:/PHP/Apache24'
+[Tue Apr 25 19:26:59.029717 2023] [mpm_winnt:notice] [pid 9168:tid 312] AH00418: Parent: Created child process 4520
+[Tue Apr 25 19:26:59.257394 2023] [core:warn] [pid 4520:tid 328] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:26:59.274624 2023] [core:warn] [pid 4520:tid 328] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::a61e:4456:1d88:b17e. Set the 'ServerName' directive globally to suppress this message
+[Tue Apr 25 19:26:59.298067 2023] [mpm_winnt:notice] [pid 4520:tid 328] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 25 20:27:00.008043 2023] [mpm_winnt:notice] [pid 9168:tid 312] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Apr 25 20:27:02.030076 2023] [mpm_winnt:notice] [pid 4520:tid 328] AH00364: Child: All worker threads have exited.
+[Tue Apr 25 20:27:02.057117 2023] [mpm_winnt:notice] [pid 9168:tid 312] AH00430: Parent: Child process 4520 exited successfully.
+<<<<<<< HEAD
+[Fri Apr 28 20:57:21.148675 2023] [core:warn] [pid 4496:tid 316] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6230:646:6ca:158d. Set the 'ServerName' directive globally to suppress this message
+[Fri Apr 28 20:57:21.598753 2023] [mpm_winnt:notice] [pid 4496:tid 316] AH00455: Apache/2.4.57 (Win64) PHP/8.2.5 configured -- resuming normal operations
+[Fri Apr 28 20:57:21.598753 2023] [mpm_winnt:notice] [pid 4496:tid 316] AH00456: Apache Lounge VS17 Server built: Apr 13 2023 09:42:59
+[Fri Apr 28 20:57:21.598753 2023] [core:notice] [pid 4496:tid 316] AH00094: Command line: 'C:\\PHP\\Apache24\\bin\\httpd.exe -d C:/PHP/Apache24'
+[Fri Apr 28 20:57:21.598753 2023] [mpm_winnt:notice] [pid 4496:tid 316] AH00418: Parent: Created child process 6120
+[Fri Apr 28 20:57:22.188698 2023] [core:warn] [pid 6120:tid 328] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6230:646:6ca:158d. Set the 'ServerName' directive globally to suppress this message
+[Fri Apr 28 20:57:22.193747 2023] [core:warn] [pid 6120:tid 328] AH00111: Config variable ${DocumentRoot} is not defined
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6230:646:6ca:158d. Set the 'ServerName' directive globally to suppress this message
+[Fri Apr 28 20:57:22.225638 2023] [mpm_winnt:notice] [pid 6120:tid 328] AH00354: Child: Starting 64 worker threads.
+=======
+>>>>>>> d710a209b4b39e6fcadd3b4470c8ca878fbc612b
