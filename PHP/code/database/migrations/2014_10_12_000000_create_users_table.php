@@ -10,7 +10,8 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+    {#説明ーマイグレーション＝＞DBの属性編集ができる
+     #UPはデータベースのマイグレーションを実行するときのコード
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -26,7 +27,7 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    {
+    {#マイグレーションのロールバック処理コード
         Schema::dropIfExists('users');
     }
 };

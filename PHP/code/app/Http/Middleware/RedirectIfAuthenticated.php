@@ -13,8 +13,11 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @codeCoverageIgnore
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      */
+    #説明ーmiddlewareは基本的にパラメタ客体（request）、最初に実行されるとnextていうつぎのmiddlewareに渡す桁数、実行されたrequestのご実行される
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
