@@ -11,10 +11,10 @@ use Illuminate\Http\RedirectResponse;
 class SubscribeController extends Controller
 {
     /**
-     * 구독
+     * サブスクリプション
      */
     public function store(SubscribeRequest $request): RedirectResponse
-    {
+    {   #説明ーuser_idはサブスクライバー、blog_idは主人
         /** @var \App\Models\User $user */
         $user = $request->user();
         /** @var \App\Models\Blog $blog */
@@ -28,7 +28,7 @@ class SubscribeController extends Controller
     }
 
     /**
-     * 구독 취소
+     * サブスクリプションキャンセル
      */
     public function destroy(UnsubscribeRequest $request): RedirectResponse
     {

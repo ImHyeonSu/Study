@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '홈')
+@section('title', 'ホーム')
 
 @section('content')
     <ul>

@@ -56,7 +56,8 @@ use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements MustVerifyEmail, CanResetPassword, JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable, ResettablePassword;
-
+    #説明ーphp artisan make:model Blog --allなどを通じてmodel,migration,modelfactory,seeder~などを一括に作れる
+    #仮想サーバーでphp artisan migrate
     /**
      * The attributes that are mass assignable.
      *
@@ -123,6 +124,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword,
 
     /**
      * ブログ
+     *ユーザーが多数のBlogを持っているていうことの表現
      */
     public function blogs(): HasMany
     {
@@ -139,7 +141,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword,
     }
 
     /**
-     * コメント
+     * 説明ーコメント、Comment.phpからの
      */
     public function comments(): HasMany
     {

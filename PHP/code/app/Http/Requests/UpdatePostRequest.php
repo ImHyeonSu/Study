@@ -16,6 +16,7 @@ class UpdatePostRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'required|string',
+            #説明ーattachments.*で*を付けた理由はすべてのデータを検査するために
             'attachments.*' => 'nullable|image',
         ];
     }

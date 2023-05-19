@@ -60,7 +60,8 @@ class Comment extends Model
     ];
 
     /**
-     * 작성자
+     * 作成者
+     *説明ー 一個コメントは作成者に所属される
      */
     public function user(): BelongsTo
     {
@@ -68,7 +69,7 @@ class Comment extends Model
     }
 
     /**
-     * 다형성
+     * 多形性、このコードを通じてコメントのDBの項目をどこでも使える
      */
     public function commentable(): MorphTo
     {
@@ -76,7 +77,7 @@ class Comment extends Model
     }
 
     /**
-     * 부모
+     * 親、foreingkeyをparent_idに指定
      *
      * @return mixed
      */
@@ -87,7 +88,7 @@ class Comment extends Model
     }
 
     /**
-     * 대댓글
+     * コメントのコメント、foreingkeyをparent_idに指定
      *
      * @return mixed
      */

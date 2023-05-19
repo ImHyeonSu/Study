@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            #説明ーconstarined()->cascadeOnDelete()を使ってUserを削除する場合blogも一緒に亡くなる
             $table->foreignIdFor(\App\Models\User::class)
                 ->constrained()
                 ->cascadeOnDelete();

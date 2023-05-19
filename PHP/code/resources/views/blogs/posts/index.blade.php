@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "글목록")
+@section('title', "書き物一覧")
 
 @section('content')
     <ul>

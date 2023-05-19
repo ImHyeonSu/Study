@@ -13,7 +13,7 @@ class Authenticate extends Middleware
      * @codeCoverageIgnore
      */
     protected function redirectTo(Request $request): ?string
-    {
+    {#routeにrouteの名前を入れたらそのrouteを返還する。
         return $request->expectsJson() ? null : route('login');
     }
 }

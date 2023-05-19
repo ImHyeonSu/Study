@@ -39,7 +39,7 @@ class SendEmails extends Command
     }
 
     /**
-     * 이메일 전송
+     * メール転送
      */
     private function sendEmails(string $queue): void
     {
@@ -51,7 +51,7 @@ class SendEmails extends Command
     }
 
     /**
-     * 메일을 받을 사용자 목록
+     * メールを受け入れる使用者一覧
      */
     private function users(): Collection
     {
@@ -59,7 +59,7 @@ class SendEmails extends Command
     }
 
     /**
-     * 글 목록
+     * 書き一覧
      */
     private function posts(): Collection
     {

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
-{
+{#以下のように分かれて宣言できる
     /**
      * Seed the application's database.
      */

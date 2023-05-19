@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class UserFactory extends Factory
-{
+{   #説明ーdummyデータを作れる機能のfactory 
     /**
      * Define the model's default state.
      *

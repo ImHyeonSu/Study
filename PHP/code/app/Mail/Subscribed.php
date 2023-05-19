@@ -12,7 +12,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class Subscribed extends Mailable implements ShouldQueue
-{
+{   #説明ーphp artisan make:mail Subscribed
     use Queueable, SerializesModels;
 
     /**
@@ -31,9 +31,10 @@ class Subscribed extends Mailable implements ShouldQueue
      * Get the message envelope.
      */
     public function envelope(): Envelope
+    #送った人、もらった人、メール件名などの情報
     {
         return new Envelope(
-            subject: '[라라벨] 구독 알림',
+            subject: 'subscirber アラム',
         );
     }
 
@@ -41,7 +42,7 @@ class Subscribed extends Mailable implements ShouldQueue
      * Get the message content definition.
      */
     public function content(): Content
-    {
+    {#メールの内容　- 419参考
         return new Content(
             view: 'emails.subscribed',
         );
@@ -51,7 +52,7 @@ class Subscribed extends Mailable implements ShouldQueue
      * Get the attachments for the message.
      */
     public function attachments(): array
-    {
+    {#添付するファイル指定可能
         return [];
     }
 }

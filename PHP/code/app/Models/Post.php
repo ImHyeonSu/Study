@@ -51,7 +51,7 @@ class Post extends Model
     ];
 
     /**
-     * 블로그
+     * ブログ
      */
     public function blog(): BelongsTo
     {
@@ -59,7 +59,7 @@ class Post extends Model
     }
 
     /**
-     * 댓글
+     * 説明ーコメント、Comment.phpからの
      *
      * @return mixed
      */
@@ -70,10 +70,23 @@ class Post extends Model
     }
 
     /**
-     * 첨부파일
+     * 添付ファイル
      */
     public function attachments(): HasMany
     {
         return $this->hasMany(Attachment::class);
     }
 }
+
+/**protected static function booted()
+{
+    self::deleted(function (Post $post){
+        $post->comments()->forceDelete();
+    });
+}
+or
+   protected $dispatchesEvents = [
+        'deleted' => PostDeleted::class
+   ]
+    書きとコメント全部削除のコード
+*/

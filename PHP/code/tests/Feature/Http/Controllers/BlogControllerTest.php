@@ -44,7 +44,7 @@ class BlogControllerTest extends TestCase
         $this->actingAs($user)
             ->post(route('blogs.store'), $data)
             ->assertRedirect();
-
+        #説明ー以下はblogの情報がDBに入ったのかを確認するためのコード
         $this->assertCount(1, $user->blogs);
         $this->assertDatabaseHas('blogs', $data);
     }
@@ -63,7 +63,7 @@ class BlogControllerTest extends TestCase
     public function testReturnsEditViewForBlog(): void
     {
         $blog = Blog::factory()->create();
-
+        #$blog->userは認証のため
         $this->actingAs($blog->user)
             ->get(route('blogs.edit', $blog))
             ->assertOk()
@@ -93,9 +93,43 @@ class BlogControllerTest extends TestCase
         $this->actingAs($blog->user)
             ->delete(route('blogs.destroy', $blog))
             ->assertRedirect();
-
+        #blogが削除されたのかの確認
         $this->assertDatabaseMissing('blogs', [
             'name' => $blog->name,
         ]);
     }
 }
+    /**
+     * public function ReturnsIndexViewForListBlog()
+     * {
+     *  $user = User::factory()->create();
+     *  $this->actingAs($user)
+     *       ->get(route('blogs.index'))
+     *       ->assertViewIs('blogs.index');
+     * }
+     * 
+     * public function ReturnsCreateViewForBlog()
+     * {
+     *  $user = User::factory()->create();
+     *  $this->actingAs($user)
+     *       ->get(route('blogs.create'))
+     *       ->assertViewIs('blogs.create');
+     * }
+     * 
+     * 
+     *  public function testCreateBlog()
+     * {
+     *  $user = User::factory()->create();
+     * 
+     *  $date =[
+     *          'name' = $tihs->faker->userName,
+     *          'display_name' = $this->faker->uniuqe()->words(3,true)        
+     * ];
+     * 
+     *  $this->actingAs($user)
+     *       ->post(route('blogs.store'), $data)
+     *       ->assertRedirect();
+     *  #以下はblogの情報がDBに入ったのかを確認するためのコード
+     *  $this->assertDatabaseHas('blog', $data);
+     * }
+     */

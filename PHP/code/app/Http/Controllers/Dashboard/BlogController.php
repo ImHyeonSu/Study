@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class BlogController extends Controller
 {
     /**
-     * 블로그 대시보드
+     * ブログダッシュボード
      */
     public function __invoke(Request $request): View
     {

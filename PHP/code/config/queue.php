@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+    #説明ーphp artisan queue:listen ^- php artisan queue:listen --queue=emails,defalut
+    #->queueを使うためのコード
     /*
     |--------------------------------------------------------------------------
     | Default Queue Connection Name

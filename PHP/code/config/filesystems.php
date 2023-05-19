@@ -27,7 +27,7 @@ return [
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
-
+    #説明ーストレージに関連した設定、ハードディスク、s3などを連結するためのコード
     'disks' => [
 
         'local' => [

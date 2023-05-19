@@ -8,6 +8,8 @@ use Illuminate\Database\Seeder;
 class UserSeeder extends Seeder
 {
     /**説明ーデータを作ってデータベース入れるファイル
+     * php artisan:seeder UserSeeder
+     * 仮想サーバーでphp artisan db:seed
      * Run the database seeds.
      */
     public function run(): void

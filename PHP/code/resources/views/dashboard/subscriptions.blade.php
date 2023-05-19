@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '내가 구독한 블로그')
+@section('title', '自分がサブスクリプションしたリスト')
 
 @section('content')
     @include('dashboard.menu')

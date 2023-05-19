@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Castables\Link;
+use App\Castables\Link; #最初のコード App\Casts\Link
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +35,8 @@ use Illuminate\Support\Facades\Storage;
  *
  * @mixin \Eloquent
  */
+#説明ーphp artisan make:model Attachment -m -f -r --policy　-m=migration -f=model factory -r=policy
+#ララベルのストレージ
 class Attachment extends Model
 {
     use HasFactory, Prunable;
@@ -62,7 +64,7 @@ class Attachment extends Model
      * Get the prunable model query.
      */
     public function prunable(): Builder
-    {
+    {   #書きが削除されたときとか以下を確認してファイルを削除を判明する
         return static::whereNull('post_id');
     }
 
@@ -75,10 +77,32 @@ class Attachment extends Model
     }
 
     /**
-     * 글
+     * 書き
      */
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
     }
 }
+/**
+ *説明ーほかの言語のgetterを示している、ぜひAttributeを返還しないといけない
+ * public function external(): Attribute
+ * {
+ *      return Attribute::make(
+ *          get: fn () => preg_match('/^https?/',$this->name)
+ *      )
+ * }
+ * 
+ * public function link(): Attribute
+ * {
+ *      return Attribute::make(get: function ($value){
+ *         #$thisに値が張ってたらそのままそれを返還externalからもらえなかったらストレージ内の名を返還
+ *         $path = $this->external ? $this->name : Storage::disk('public')->url($this->name);　
+ *          
+ *          return $value ?? $path; $valueに値が入ってるのか確認してあったらそれを返還、それじゃなければ$pathを返還
+ *          },
+ *          set: fn ($value) => $value
+ *          );
+ * }
+ * 
+ */

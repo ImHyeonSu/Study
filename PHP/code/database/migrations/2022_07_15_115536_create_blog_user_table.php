@@ -10,7 +10,7 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+    {   #説明ーblog,userの二つのテーブルの情報をforeignkeyとしてもらってる
         Schema::create('blog_user', function (Blueprint $table) {
             $table->foreignIdFor(\App\Models\User::class)
                 ->constrained()

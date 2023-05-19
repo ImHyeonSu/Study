@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class SubscriptionController extends Controller
 {
     /**
-     * 내가 구독한 블로그 대시보드
+     * 自分がサブスクリプションしたリスト
      */
     public function __invoke(Request $request): View
     {

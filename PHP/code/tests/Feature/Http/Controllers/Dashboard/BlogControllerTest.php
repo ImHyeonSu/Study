@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class BlogControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase;#説明ー後で追加された
 
     public function testReturnsBlogsDashboardViewForListOfBlog()
     {

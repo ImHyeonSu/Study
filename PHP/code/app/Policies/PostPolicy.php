@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy
-{
+{#説明ーPostControllerのための認証コード
     use HandlesAuthorization;
 
     /**
@@ -17,6 +17,7 @@ class PostPolicy
     public function viewAny(User $user): bool
     {
         return $user->tokenCan('post:read');
+        #最初のコードreturn true;
     }
 
     /**
@@ -25,6 +26,7 @@ class PostPolicy
     public function view(User $user, Post $post): bool
     {
         return $user->tokenCan('post:read');
+        #最初のコードreturn true;
     }
 
     /**
@@ -34,6 +36,7 @@ class PostPolicy
     {
         return $user->id === $blog->user_id &&
             $user->tokenCan('post:create');
+        #最初のコードreturn $user->id === $blog->user_id
     }
 
     /**
@@ -43,6 +46,7 @@ class PostPolicy
     {
         return $user->id === $post->blog->user_id &&
             $user->tokenCan('post:update');
+        #最初のコードreturn $user->id === $post->blog->user_id
     }
 
     /**
@@ -52,5 +56,6 @@ class PostPolicy
     {
         return $user->id === $post->blog->user_id &&
             $user->tokenCan('post:delete');
+         #最初のコードreturn　$user->id === $post->blog->user_id
     }
 }

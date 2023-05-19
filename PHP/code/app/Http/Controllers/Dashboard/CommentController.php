@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class CommentController extends Controller
 {
     /**
-     * 댓글 대시보드
+     * コメントダッシュボード
      */
     public function __invoke(Request $request): View
     {

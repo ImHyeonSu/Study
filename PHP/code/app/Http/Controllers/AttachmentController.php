@@ -25,7 +25,7 @@ class AttachmentController extends Controller
     }
 
     /**
-     * 파일 생성
+     * ファイル作り
      */
     public function store(StoreAttachmentRequest $request, Post $post): void
     {
@@ -33,7 +33,7 @@ class AttachmentController extends Controller
     }
 
     /**
-     * 파일 삭제
+     * ファイル削除
      */
     public function destroy(Attachment $attachment): RedirectResponse
     {

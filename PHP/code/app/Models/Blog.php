@@ -74,7 +74,7 @@ class Blog extends Model
     }
 
     /**
-     * 블로그 소유자
+     * ブログ主人
      */
     public function user(): BelongsTo
     {
@@ -82,7 +82,7 @@ class Blog extends Model
     }
 
     /**
-     * 내 구독자
+     * myサブスクライバー
      */
     public function subscribers(): BelongsToMany
     {
@@ -91,7 +91,7 @@ class Blog extends Model
     }
 
     /**
-     * 글
+     * 書く,app/model/postsをもらう
      */
     public function posts(): HasMany
     {
@@ -99,7 +99,8 @@ class Blog extends Model
     }
 
     /**
-     * 댓글
+     * コメント
+     * firstkeyはcommentとpostを連結しているkey、secondKeyはcommentable_idを指定している
      */
     public function comments(): HasManyThrough
     {

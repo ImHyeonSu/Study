@@ -16,6 +16,7 @@ class PostController extends Controller
     /**
      * PostController
      */
+    #コンストラクタの認証政策を適用する
     public function __construct(private readonly PostService $postService)
     {
         $this->authorizeResource(Post::class, 'post', [
@@ -27,7 +28,7 @@ class PostController extends Controller
     }
 
     /**
-     * 글 목록
+     * 書き物一覧
      */
     public function index(Blog $blog): View
     {
@@ -37,7 +38,7 @@ class PostController extends Controller
     }
 
     /**
-     * 글 쓰기 폼
+     * 書きフォーム
      */
     public function create(Blog $blog): View
     {
@@ -47,31 +48,43 @@ class PostController extends Controller
     }
 
     /**
-     * 글 쓰기
+     * 書く
      */
     public function store(StorePostRequest $request, Blog $blog): RedirectResponse
     {
         $post = $this->postService->store($request->validated(), $blog);
 
+        #最初のコード$post = $this->posts()->create($request->only(['title', 'content']));
+        #ファイル添付が追加されたコード
+        #$this->attachments($request, $post);
         return to_route('posts.show', $post);
     }
 
     /**
-     * 글 읽기
+     * 書き物読み
      */
     public function show(Request $request, Post $post): View
     {
         return view('blogs.posts.show', [
             'post' => $post->loadCount('comments'),
             'comments' => $post->comments()
+                #doesntHaveは関係が設定されたDBのデータのなかでparentだけのデータを呼び出す。
+                #子データはrepliesとして呼ぶ
                 ->doesntHave('parent')
                 ->with(['user', 'replies.user'])
                 ->get(),
+        #最初のコードreturn view('blogs.posts.show',['post'=>$post]);
+        /**二番目のコード
+         *  $user = $request->user();
+         * 
+         *  return view('blogs.show',['post'=>$blog->posts()->latest()->paginate(5)]);
+         * */   
+
         ]);
     }
 
     /**
-     * 글 수정 폼
+     * 修正フォーム
      */
     public function edit(Post $post): View
     {
@@ -81,17 +94,19 @@ class PostController extends Controller
     }
 
     /**
-     * 글 수정
+     * 修正
      */
     public function update(UpdatePostRequest $request, Post $post): RedirectResponse
     {
         $this->postService->update($request->validated(), $post);
-
+        #最初のコード$post->update($request->only(['title', 'content']));
+        #ファイル添付が追加されたコード
+        #$this->attachments($request, $post);
         return to_route('posts.show', $post);
     }
 
     /**
-     * 글 삭제
+     * 削除
      */
     public function destroy(Post $post): RedirectResponse
     {
@@ -100,3 +115,13 @@ class PostController extends Controller
         return to_route('blogs.posts.index', $post->blog);
     }
 }
+
+/**
+ * private function attachments(Request $request, $post)
+ * {
+ *      if ($reuqest->hasFile('attachments')){
+ *          app(AttachmentController::class)->store($request, $post);          
+ * }
+ * 
+ * }
+ */

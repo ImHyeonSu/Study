@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '내 구독자')
+@section('title', 'myサブスクライバー')
 
 @section('content')
     @include('dashboard.menu')

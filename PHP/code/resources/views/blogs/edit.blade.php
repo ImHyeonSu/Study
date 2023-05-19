@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '블로그 관리')
+@section('title', 'ブログ管理')
 
 @section('content')
     <div>
@@ -11,14 +11,14 @@
             <input type="text" name="name" value="{{ $blog->name }}">
             <input type="text" name="display_name" value="{{ $blog->display_name }}">
 
-            <button type="submit">이름 바꾸기</button>
+            <button type="submit">名変更</button>
         </form>
 
         <form action="{{ route('blogs.destroy', $blog) }}" method="POST">
             @method('DELETE')
             @csrf
 
-            <button type="submit">삭제</button>
+            <button type="submit">削除</button>
         </form>
     </div>
 
@@ -29,12 +29,12 @@
             @foreach($blog->posts as $post)
                 <li>
                     <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
-                    <a href="{{ route('posts.edit', $post) }}">수정</a>
+                    <a href="{{ route('posts.edit', $post) }}">修正</a>
                     <form action="{{ route('posts.destroy', $post) }}" method="POST">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit">삭제</button>
+                        <button type="submit">削除</button>
                     </form>
                 </li>
             @endforeach
@@ -42,7 +42,7 @@
     </div>
 
     <div>
-        <h3>댓글</h3>
+        <h3>コメント</h3>
 
         <ul>
             @foreach ($blog->comments as $comment)
@@ -54,7 +54,7 @@
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit">삭제</button>
+                        <button type="submit">削除</button>
                     </form>
                 </li>
             @endforeach

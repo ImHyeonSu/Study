@@ -8,7 +8,7 @@ use Illuminate\Support\Collection as BaseCollection;
 class BlogCollection extends Collection
 {
     /**
-     * 피드
+     * フォード
      */
     public function feed(): BaseCollection
     {

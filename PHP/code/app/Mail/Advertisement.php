@@ -31,7 +31,7 @@ class Advertisement extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: '[라라벨] 라라벨 커뮤니티의 최신글 살펴보기',
+            subject: 'ララベルコミュニティの最新文章確認',
         );
     }
 

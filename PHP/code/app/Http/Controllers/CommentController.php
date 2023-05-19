@@ -14,12 +14,12 @@ class CommentController extends Controller
      * CommentController
      */
     public function __construct()
-    {
+    {   #説明ーコメントの削除ができるようにするコード
         $this->authorizeResource(Comment::class, 'comment');
     }
 
     /**
-     * 댓글 쓰기
+     * コメント追加
      */
     public function store(StoreCommentRequest $request, Post $post): RedirectResponse
     {
@@ -34,7 +34,7 @@ class CommentController extends Controller
     }
 
     /**
-     * 댓글 수정
+     * コメント修正
      */
     public function update(UpdateCommentRequest $request, Comment $comment): RedirectResponse
     {
@@ -44,7 +44,7 @@ class CommentController extends Controller
     }
 
     /**
-     * 댓글 삭제
+     * コメント削除
      */
     public function destroy(Comment $comment): RedirectResponse
     {

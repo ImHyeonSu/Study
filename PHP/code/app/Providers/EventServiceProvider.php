@@ -36,7 +36,7 @@ class EventServiceProvider extends ServiceProvider
 
     /**
      * The model observers to register.
-     *
+     *説明ーイベント発生のアラムを登録するクラス
      * @var array
      */
     protected $observers = [

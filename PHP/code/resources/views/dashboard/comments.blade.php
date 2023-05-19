@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '댓글 관리')
+@section('title', 'コメント管理')
 
 @section('content')
     @include('dashboard.menu')
@@ -14,7 +14,7 @@
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit">삭제</button>
+                    <button type="submit">削除</button>
                 </form>
             </li>
         @endforeach

@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class WelcomeController extends Controller
 {
     /**
-     * 피드
+     * フィード
      */
     public function __invoke(Request $request): View
     {

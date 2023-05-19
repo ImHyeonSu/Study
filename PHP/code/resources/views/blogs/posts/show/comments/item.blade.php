@@ -2,7 +2,7 @@
     <div>{{ $comment->user->name }}</div>
     <div>{{ $comment->created_at->diffForHumans(now()) }}</div>
 
-    <p>{{ $comment->trashed() ? '삭제된 댓글입니다.' : $comment->content }}</p>
+    <p>{{ $comment->trashed() ? '削除されたコメントです。' : $comment->content }}</p>
 
     @unless ($comment->trashed())
         @can(['update', 'delete'], $comment)
@@ -10,7 +10,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button type="submit">삭제</button>
+                <button type="submit">削除</button>
             </form>
 
             <form action="{{ route('comments.update', $comment) }}" method="POST">
@@ -19,7 +19,7 @@
 
                 <textarea name="content">{{ $comment->content }}</textarea>
 
-                <button type="submit">수정</button>
+                <button type="submit">修正</button>
             </form>
         @endcan
     @endunless

@@ -20,10 +20,12 @@ return new class extends Migration
                 ->nullable()
                 ->constrained('comments')
                 ->cascadeOnDelete();
+            #説明ー多形性、これを通じてcommentable_type,commentable_idを作る
+            #書きを削除してもコメントはDBに残っている
             $table->morphs('commentable');
             $table->text('content');
             $table->timestamps();
-
+            #ソフト削除、deletead_atを作る
             $table->softDeletes();
         });
     }

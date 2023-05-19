@@ -8,7 +8,7 @@ use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class Link implements CastsAttributes
+class Link implements CastsAttributes #implements Castableが最初のコード
 {
     /**
      * Cast the given value.
@@ -16,7 +16,7 @@ class Link implements CastsAttributes
     public function get(Model $model, string $key, mixed $value, array $attributes): LinkCastable
     {
         $path = $this->external($attributes['name'])
-            ? $attributes['name']
+            ? $attributes['name']#モデルの基本値を設定する
             : Storage::disk('public')->url($attributes['name']);
 
         //return $value ?? $path;
@@ -40,10 +40,11 @@ class Link implements CastsAttributes
         return [
             'name' => $value->path,
         ];
+        #最初のコード　return $value; ifとかはなくてreturn文だけ
     }
 
     /**
-     * 파일이 링크인가?
+     * 
      */
     private function external(string $name): false|int
     {

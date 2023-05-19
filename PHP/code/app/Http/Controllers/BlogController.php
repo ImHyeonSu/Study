@@ -16,21 +16,27 @@ class BlogController extends Controller
      */
     public function __construct()
     {
+        #説明ー以下のコードを通じてpolicyが適用されるーBlogpolicy
         $this->authorizeResource(Blog::class, 'blog');
     }
 
     /**
-     * 블로그 목록
+     * GET
+     * Display a listing of the resource.
      */
     public function index(): View
     {
         return view('blogs.index', [
+            #説明ー以下のように全部呼び出したら効率的じゃない
+            #php artisan vendor:publish --tag=laravel-pagination
+            #'blogs'=> Blog::all()
             'blogs' => Blog::with('user')->paginate(5),
         ]);
     }
 
     /**
-     * 블로그 생성 폼
+     * GET
+     * Show the form for creating a new resource.
      */
     public function create(): View
     {
@@ -38,7 +44,8 @@ class BlogController extends Controller
     }
 
     /**
-     * 블로그 생성
+     * POST
+     * Store a newly created resource in storage.
      */
     public function store(StoreBlogRequest $request): RedirectResponse
     {
@@ -51,23 +58,28 @@ class BlogController extends Controller
     }
 
     /**
-     * 블로그
+     * GET
+     * Display the specified resource.
      */
     public function show(Request $request, Blog $blog): View
     {
         /** @var \App\Models\User $user */
         $user = $request->user();
-
         return view('blogs.show', [
+            #以下のようにblogと$blogになったら、implicit bindingでいう機能が作動
+            #show.blade.phpから渡された$blogの値がURLに入ってblogs/~~~でいうURLになる
             'blog' => $blog,
             'owned' => $user->blogs()->find($blog->id),
             'subscribed' => $blog->subscribers()->find($user->id),
             'posts' => $blog->posts()->latest()->paginate(5),
         ]);
+        # return view('blogs.show', [
+        #    'blog' => $blog        ]);
     }
 
     /**
-     * 블로그 수정 폼
+     * GET
+     * Show the form for editing the specified resource.
      */
     public function edit(Blog $blog): View
     {
@@ -77,10 +89,21 @@ class BlogController extends Controller
                 'comments.commentable',
             ]),
         ]);
+        # return view('blogs.edit', [
+        #    'blog' => $blog        ]);
+        #  blogのidが同じかを確認してるコードを呼び出して確認するコード
+        #  if(! Gate::allows('update-blog', $blog)){
+        #  abort(403);} or Gate::authorize('update-blog',$blog);
+        # superuserの場合　
+        # Gate::before(function ($user, $ability){
+        # if ($user->isAdministrator()){return user;}   
+        #});     
+        
     }
 
     /**
-     * 블로그 수정
+     * PUT/FETCH
+     * Update the specified resource in storage.
      */
     public function update(UpdateBlogRequest $request, Blog $blog): RedirectResponse
     {
@@ -90,7 +113,8 @@ class BlogController extends Controller
     }
 
     /**
-     * 블로그 삭제
+     * DELETE
+     * Remove the specified resource from storage.
      */
     public function destroy(Blog $blog): RedirectResponse
     {

@@ -24,10 +24,10 @@ class PaginateServiceProvider extends ServiceProvider
      * Bootstrap services.
      */
     public function boot(): void
-    {
+    {   #説明ー基本設定--------------------
         Paginator::defaultView('vendor/pagination/default');
         Paginator::defaultSimpleView('vendor/pagination/simple-default');
-
+        #--------------------
         Collection::macro('paginate', function (int $perPage, int $currentPage, array $options = []) {
             return app(LengthAwarePaginator::class, [
                 'items' => $this->forPage($currentPage, $perPage),
